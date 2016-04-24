@@ -5,11 +5,33 @@
   <body>
     
     <p>Hello World!</p>
-    <p></p>I am Serah Joseph Variam born on 22 April 2016, 15:07 IST at Mysore, India.</p>
+    <p>I am Serah Joseph Variam born on 22 April 2016, 15:07 IST at Mysore, India.</p>
+    <p id="age">Time since</p>
     <p>
       <img src="http://serahjoseph.com/IMG_0873.JPG"/>
       <img src="http://serahjoseph.com/IMG_0876.JPG"/>
-      <img src="http://serahjoseph.com/IMG_0879.JPG" />
+      <img src="http://serahjoseph.com/IMG_0879.JPG"/>
     </p>
   </body>
+
+  <script>
+function timeSince() {
+
+  var date = new Date(2016, 3, 22, 15, 0, 7, 000);
+  var ms = new Date() - date;
+
+  var d, h, m, s;
+  s = Math.floor(ms / 1000);
+  m = Math.floor(s / 60);
+  s = s % 60;
+  h = Math.floor(m / 60);
+  m = m % 60;
+  d = Math.floor(h / 24);
+  h = h % 24;
+  return d+' days, '+h+' hours, '+m+' minutes'
+}  
+
+document.getElementById("age").innerHTML = 'I am '+timeSince()+' old.';
+  </script>
+
 </html>
